@@ -13,6 +13,7 @@ const CotizadorProvider = ({ children }) => {
   const [resultado, setResultado] = useState(0);
   const [cargando, setCargando] = useState(false);
 
+
   const [datos, setDatos] = useState({
     marca: "",
     year: "",
@@ -27,6 +28,7 @@ const CotizadorProvider = ({ children }) => {
   };
 
   const cotizarSeguro = () => {
+    if(error.length !== 0) {
     //Una base
     let resultado = 2000;
 
@@ -57,6 +59,8 @@ const CotizadorProvider = ({ children }) => {
       setCargando(false)
     }, 3000);
   };
+  return
+  }
 
   return (
     <CotizadorContext.Provider
